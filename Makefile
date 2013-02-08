@@ -6,6 +6,9 @@ OUTPUT_PATH = bin/
 SOURCE_PATH = src/
 EXE = bin/mbpfan
 CONF = mbpfan.conf
+SERVICE = mbpfan.service
+INSTALL_PROGRAM = /usr/bin/install -Dm755
+INSTALL_DATA = /usr/bin/install -Dm644
 
 ifeq ($(COMPILER), G++)
   ifeq ($(OS),Windows_NT)
@@ -64,8 +67,9 @@ uninstall:
 
 install:
 	make
-	cp $(EXE) /usr/sbin
-	cp -n $(CONF) /etc
+	$(INSTALL_PROGRAM) $(EXE) $(DESTDIR)/usr/sbin/mbpfan
+	$(INSTALL_DATA) $(CONF) $(DESTDIR)/etc/mbpfan.conf
+	$(INSTALL_DATA) $(SERVICE) $(DESTDIR)/usr/lib/systemd/system/mbpfan.service
 	@echo ""
 	@echo "******************"
 	@echo "INSTALL COMPLETED"
