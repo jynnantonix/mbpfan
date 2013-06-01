@@ -16,7 +16,7 @@ ifeq ($(COMPILER), G++)
   else
     OBJ = o
   endif
-  COPT = 
+  COPT =
   CCMD = g++
   OBJFLAG = -o
   EXEFLAG = -o
@@ -59,15 +59,15 @@ clean:
 
 tests:
 	make install
-	sudo /usr/sbin/mbpfan -f -v -t
+	sudo /usr/bin/mbpfan -f -v -t
 
 uninstall:
-	rm /usr/sbin/mbpfan
+	rm /usr/bin/mbpfan
 	rm /etc/mbpfan.conf
 
 install:
 	make
-	$(INSTALL_PROGRAM) $(EXE) $(DESTDIR)/usr/sbin/mbpfan
+	$(INSTALL_PROGRAM) $(EXE) $(DESTDIR)/usr/bin/mbpfan
 	$(INSTALL_DATA) $(CONF) $(DESTDIR)/etc/mbpfan.conf
 	$(INSTALL_DATA) $(SERVICE) $(DESTDIR)/usr/lib/systemd/system/mbpfan.service
 	@echo ""

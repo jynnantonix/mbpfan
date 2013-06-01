@@ -5,7 +5,7 @@ Introduction
 ---------------------
 This is an enhanced version of [Allan McRae mbpfan](http://allanmcrae.com/2010/05/simple-macbook-pro-fan-daemon/)
 
-Fan-Control-Daemon is a daemon that uses input from coretemp module and sets the fan speed using the applesmc module. 
+Fan-Control-Daemon is a daemon that uses input from coretemp module and sets the fan speed using the applesmc module.
 This enhanced version assumes any number of processors and fans (max. 10).
 
 *  It only uses the temperatures from the processors as input.
@@ -58,7 +58,7 @@ Install with
 
     sudo make install
 
-It copies mbpfan to /usr/sbin and mbpfan.conf to /etc
+It copies mbpfan to /usr/bin and mbpfan.conf to /etc
 
 
 Run The Tests (Recommended)
@@ -91,14 +91,14 @@ Starting at boot
 ----------------
 **Ubuntu**
 For upstart based init systems (Ubuntu), an example upstart job has been
-provided for use in place of the LSB-style init script. 
+provided for use in place of the LSB-style init script.
 To use, execute:
 
     sudo cp mbpfan.upstart /etc/init/mbpfan.conf
     sudo start mbpfan
 
 **Debian**
-An init file suitable for /lib/lsb/init-functions (Debian) 
+An init file suitable for /lib/lsb/init-functions (Debian)
 is located in the main folder of the source files, called mbpfan.init.debian
 Rename it to mbpfan, give it execution permissions (chmod +x mbpfan)
 and move it to /etc/init.d

@@ -4,7 +4,7 @@ After=syslog.target
 After=remote-fs.target
 
 [Service]
-ExecStart=/usr/sbin/mbpfan
+ExecStart=/usr/bin/mbpfan
 Type=forking
 Restart=always
 
